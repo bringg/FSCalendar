@@ -134,8 +134,9 @@
     CGFloat titleHeight = self.bounds.size.height*5.0/6.0;
     CGFloat diameter = MIN(self.bounds.size.height*5.0/6.0,self.bounds.size.width);
     diameter = diameter > FSCalendarStandardCellDiameter ? (diameter - (diameter-FSCalendarStandardCellDiameter)*0.5) : diameter;
+    diameter += 8; //Sorry for this - could not figure out how to make the circle bigger without it
     _shapeLayer.frame = CGRectMake((self.bounds.size.width-diameter)/2,
-                                   (titleHeight-diameter)/2,
+                                   (titleHeight-diameter)/2 + 3, //Sorry for this- wanted to make the circle a bit down. 
                                    diameter,
                                    diameter);
     
